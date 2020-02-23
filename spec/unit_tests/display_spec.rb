@@ -11,6 +11,11 @@ describe Display do
       expect { Display.render_list({ webpage_by_most_views: { "/help_page/1" => 2, "/contact" => 4, "/about/2" => 1 } }) }.to output(
         "** Webpages By Most Viewed **\n/contact || Views: 4\n/help_page/1 || Views: 2\n/about/2 || Views: 1\n").to_stdout
     end
-    
+
+    it "the list title will change depending on the type of list" do
+      expect { Display.render_list({ webpage_by_most_unique_views: { "/help_page/1" => 2, "/contact" => 4, "/about/2" => 1 } }) }.to output(
+        "** Webpages By Most Unique Views **\n/contact || Views: 4\n/help_page/1 || Views: 2\n/about/2 || Views: 1\n").to_stdout
+    end
+
   end
 end

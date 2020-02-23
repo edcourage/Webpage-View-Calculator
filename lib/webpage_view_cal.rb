@@ -13,7 +13,8 @@ class WebpageViewCal
       })
   end
 
-  # This method returns a hash where the keys equal the page and and the value is the correlating ip addresses
+  # This method returns a hash where the keys equal the page and and
+  # the value is the correlating ip addresses
   def self.log_parser(file_path)
     calculated_most_views = Hash.new { |hash, key| hash[key] = [] }
     File.open(file_path).each_line do |line|
