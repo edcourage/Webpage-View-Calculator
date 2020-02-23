@@ -9,7 +9,14 @@ describe WebpageViewCal do
     it "it parses a log file and creates a hash" do
       display = double 'display'
       expect(display).to receive(:render_list).with({ webpage_by_most_views: { "/help_page/1" => 1 } })
-      WebpageViewCal.by_most_views(file_path: 'resources/test_resources/help_page_one_line.log',
+      WebpageViewCal.by_most_views(file_path: 'resources/test_resources/help_page_one_view.log',
+      display: display)
+    end
+
+    it "if the log file indecates two view that will be represented" do
+      display = double 'display'
+      expect(display).to receive(:render_list).with({ webpage_by_most_views: { "/help_page/1" => 2 } })
+      WebpageViewCal.by_most_views(file_path: 'resources/test_resources/help_page_two_views.log',
       display: display)
     end
   end
