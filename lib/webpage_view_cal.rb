@@ -6,7 +6,6 @@ class WebpageViewCal
       page_name = line.split(" ")[0]
       calculated_most_views[page_name] += 1
     end
-    p calculated_most_views
     display.render_list({ webpage_by_most_views: calculated_most_views })
   end
 
