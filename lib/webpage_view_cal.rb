@@ -1,3 +1,5 @@
+require_relative "display"
+
 class WebpageViewCal
 
   def self.by_most_views(file_path:, display: Display)

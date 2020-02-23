@@ -6,5 +6,6 @@ class Display
         puts "#{page_name} || Views: #{view_count}"
       end
     end
+    nil
   end
 end
