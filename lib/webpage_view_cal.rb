@@ -13,6 +13,14 @@ class WebpageViewCal
       })
   end
 
+  def self.list_by_both_unique_views_and_most_views(file_path:, display: Display)
+    display.render_list({
+        webpage_by_most_views: log_parser(file_path).transform_values { |v| v.count },
+      webpage_by_most_unique_views: log_parser(file_path).transform_values { |v| v.uniq.count }
+      })
+
+  end
+
   # This method returns a hash where the keys equal the page and and
   # the value is the correlating ip addresses
   def self.log_parser(file_path)

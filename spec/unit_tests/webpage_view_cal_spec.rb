@@ -54,4 +54,25 @@ describe WebpageViewCal do
     end
   end
 
+  context "#list by both unique views and most views" do
+    it "should only count unique views" do
+      expected_unique_views_hash = {
+        "/about/2" => 1,
+        "/help_page/1" => 2,
+        "/contact" => 1,
+      }
+      expected_total_views_hash = {
+        "/about/2" => 1,
+        "/help_page/1" => 3,
+        "/contact" => 2,
+      }
+      expect(display).to receive(:render_list).with({
+        webpage_by_most_views: expected_total_views_hash,
+        webpage_by_most_unique_views: expected_unique_views_hash
+      })
+      WebpageViewCal.list_by_both_unique_views_and_most_views(file_path: 'resources/test_resources/different_pages_multiple_views_each.log',
+      display: display)
+    end
+  end
+
 end
