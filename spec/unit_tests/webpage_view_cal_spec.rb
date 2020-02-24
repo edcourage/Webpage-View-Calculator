@@ -55,7 +55,7 @@ describe WebpageViewCal do
   end
 
   context "#list by both unique views and most views" do
-    it "should only count unique views" do
+    it "should call display class with hash containing both unique views and mosts views" do
       expected_unique_views_hash = {
         "/about/2" => 1,
         "/help_page/1" => 2,

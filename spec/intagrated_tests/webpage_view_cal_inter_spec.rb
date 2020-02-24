@@ -18,7 +18,7 @@ describe "Intagrated Tests" do
   end
 
   context "list_by_both_unique_views_and_most_views" do
-    it "will puts correct list with correct title" do
+    it "will puts correct lists with correct titles" do
       path = 'resources/test_resources/different_pages_multiple_views_each.log'
       expect { WebpageViewCal.list_by_both_unique_views_and_most_views(file_path: path) }.to output(
         "** Webpages By Most Viewed **\n/help_page/1 || Views: 3\n/contact || Views: 2\n/about/2 || Views: 1\n** Webpages By Most Unique Views **\n/help_page/1 || Views: 2\n/contact || Views: 1\n/about/2 || Views: 1\n").to_stdout
