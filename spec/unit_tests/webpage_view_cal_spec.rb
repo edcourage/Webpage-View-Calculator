@@ -75,4 +75,11 @@ describe WebpageViewCal do
     end
   end
 
+  context "#average_page_views" do
+    it "will return 2 if I give it two help page from with same id" do
+      expect(display).to receive(:render_list).with({ webpage_by_most_unique_views: {"/help_page/1" => 2} })
+      WebpageViewCal.average_page_views(file_path:'resources/test_resources/help_page_two_views.log', display: display)
+    end
+  end
+
 end

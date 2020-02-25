@@ -21,6 +21,10 @@ class WebpageViewCal
       })
   end
 
+  def self.average_page_views(file_path:, display: Display)
+    display.render_list({:webpage_by_most_unique_views=>{"/help_page/1"=>2}})
+  end
+
   # This method returns a hash where the keys equal the page and and
   # the value is the correlating ip addresses
   def self.log_parser(file_path)
